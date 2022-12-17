@@ -8,6 +8,12 @@ function App() {
         Set up for dictionary project
     
       </header>
+      <main>
+
+      </main>
+      <footer>
+        <a href="https://github.com/havoriskova/dictionary" target="_blank" rel="noreferrer">GitHub repo</a>
+      </footer>
     </div>
   );
 }
