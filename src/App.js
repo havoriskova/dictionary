@@ -1,6 +1,6 @@
 //import logo from './logo.svg';     <img src={logo} className="App-logo" alt="logo" />
 import './App.css';
-import Search from './components/Search';
+import Dictionary from './components/Dictionary';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       </header>
 
       <main>
-        <Search />
+        <Dictionary />
       </main>
 
       <footer>
