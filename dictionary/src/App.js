@@ -1,5 +1,6 @@
 //import logo from './logo.svg';     <img src={logo} className="App-logo" alt="logo" />
 import './App.css';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -8,9 +9,11 @@ function App() {
         Set up for dictionary project
     
       </header>
-      <main>
 
+      <main>
+        <Search />
       </main>
+
       <footer>
         <a href="https://github.com/havoriskova/dictionary" target="_blank" rel="noreferrer">GitHub repo</a>
       </footer>
