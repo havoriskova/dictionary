@@ -4,6 +4,9 @@ import axios from 'axios';
 const Dictionary = () => {
 
     const [keyword, setKeyword] = useState('');
+    const [isErr, setIsError] = useState(false);
+    const [src, setSrc] = useState('');
+    const [data, setData] = useState('');
 
     const updateKeyword = (e) => {
         setKeyword(e.target.value);
@@ -18,12 +21,22 @@ const Dictionary = () => {
     }
 
     const handleResponse = (res) => {
+        setIsError(false);
         console.log(res);
         console.log(res.data);
+        console.log(res.data[0].meanings[0].definitions[0].definition);
+        setData(res.data[0].meanings[0].definitions[0].definition);
     }
 
-    const handleError = (err) => {
-        console.log(err);
+
+    const handleError = (res) => {
+        console.log(res);
+        console.log(res.response.request.status);
+        setIsError(true);
+        setSrc(`https://http.cat/${res.response.request.status}.jpg`);
+        let alt = `neco`;
+        console.log(isErr);
+
     }
  
     return(
@@ -32,6 +45,8 @@ const Dictionary = () => {
                 <input type='search' placeholder="Type a word" autoFocus
                 onChange={updateKeyword}></input>
             </form>
+            {isErr ? (<img src={src} alt="" />) : null}
+            { !isErr ? (<div>  {data} </div>) : null }
         </div>
     )
 
