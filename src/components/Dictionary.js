@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import axios from 'axios';
 import './Dictionary.css';
+import Results from './Results';
 
 const Dictionary = () => {
 
@@ -43,19 +44,13 @@ const Dictionary = () => {
  
     return(
         <div className="Dictionary container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="section-container">
                 <input type='search' placeholder="Type a word" autoFocus
                 onChange={updateKeyword}></input>
             </form>
 
             {isErr ? (<img src={src} alt="" />) : null}
-            { !isErr && data ? (<div className='data-section'>  
-                    <h2>{data.word}</h2>
-                    <div className='data'>definition: {data.meanings[0].definitions[0].definition} </div>
-                    <div className='data'>phonetic: {data.phonetic}</div>
-                
-                </div>) : null 
-            }
+            { !isErr && data ? <Results data={data} /> : null }
 
         </div>
     )
