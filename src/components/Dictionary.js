@@ -34,7 +34,6 @@ const Dictionary = () => {
         console.log(res.response.request.status);
         setIsError(true);
         setSrc(`https://http.cat/${res.response.request.status}.jpg`);
-        let alt = `neco`;
         console.log(isErr);
 
     }
