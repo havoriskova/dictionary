@@ -15,17 +15,19 @@ const Dictionary = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(keyword);
-        axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`)
+        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
+        axios.get(apiUrl)
             	.then(handleResponse)
                 .catch(handleError);
     }
 
     const handleResponse = (res) => {
         setIsError(false);
-        console.log(res);
-        console.log(res.data);
+        //console.log(res);
+        console.log(res.data); // axios always puts response into 'data'
         console.log(res.data[0].meanings[0].definitions[0].definition);
         setData(res.data[0].meanings[0].definitions[0].definition);
+        //setData(res.data[0]); + v JSX data.meanings ??
     }
 
 
@@ -44,8 +46,10 @@ const Dictionary = () => {
                 <input type='search' placeholder="Type a word" autoFocus
                 onChange={updateKeyword}></input>
             </form>
+
             {isErr ? (<img src={src} alt="" />) : null}
-            { !isErr ? (<div>  {data} </div>) : null }
+            { !isErr ? (<div>  definition: {data} </div>) : null }
+
         </div>
     )
 
