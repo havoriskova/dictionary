@@ -6,8 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Set up for dictionary project
-    
+        <h1>Set up for dictionary project</h1>
       </header>
 
       <main>

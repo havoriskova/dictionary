@@ -1,9 +1,10 @@
 import {useState} from 'react';
 import axios from 'axios';
+import './Dictionary.css';
 
 const Dictionary = () => {
 
-    const [keyword, setKeyword] = useState('');
+    const [keyword, setKeyword] = useState('yoga');
     const [isErr, setIsError] = useState(false);
     const [src, setSrc] = useState('');
     const [data, setData] = useState('');
@@ -26,8 +27,8 @@ const Dictionary = () => {
         //console.log(res);
         console.log(res.data); // axios always puts response into 'data'
         console.log(res.data[0].meanings[0].definitions[0].definition);
-        setData(res.data[0].meanings[0].definitions[0].definition);
-        //setData(res.data[0]); + v JSX data.meanings ??
+        setData(res.data[0]);
+
     }
 
 
@@ -48,7 +49,13 @@ const Dictionary = () => {
             </form>
 
             {isErr ? (<img src={src} alt="" />) : null}
-            { !isErr ? (<div>  definition: {data} </div>) : null }
+            { !isErr && data ? (<div className='data-section'>  
+                    <h2>{data.word}</h2>
+                    <div className='data'>definition: {data.meanings[0].definitions[0].definition} </div>
+                    <div className='data'>phonetic: {data.phonetic}</div>
+                
+                </div>) : null 
+            }
 
         </div>
     )
