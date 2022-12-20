@@ -3,7 +3,7 @@
 const Gallery = ({word}) => {
 
     return (
-        <div className="Gallery container">
+        <div className="Gallery container content-container">
             hoi from gallery
         </div>
     )

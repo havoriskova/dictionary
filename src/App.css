@@ -6,14 +6,16 @@
 
 img {
   max-width: 100%;
+  padding: 1rem;
 }
 
 
 .App {
-  text-align: center;
   --primary-color: #562;
-  --secondary-color: #555;
+  --secondary-color: rgb(246, 246, 246);
   --accent-color: rgb(117, 86, 211);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .App-header {
@@ -24,5 +26,5 @@ img {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--secondary-color);
 }

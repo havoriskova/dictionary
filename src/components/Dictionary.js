@@ -46,13 +46,15 @@ const Dictionary = () => {
  
     return(
         <div className="Dictionary container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="text-center content-container">
                 <input type='search' placeholder="Type a word" autoFocus
                 onChange={updateKeyword}></input>
             </form>
 
-            {isErr ? (<div><img src={errorImg} alt="error message with funny cat" />
-            <p>Error number {errorNum} </p></div>) : null}
+            {isErr ? (<div className='content-container text-center'>
+                <p>Error number {errorNum} </p>
+                <img src={errorImg} alt="error message with funny cat" />
+            </div>) : null}
 
             { !isErr && data ? <Results data={data} /> : null }
 

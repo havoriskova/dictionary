@@ -6,14 +6,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Set up for dictionary project</h1>
+        <h1>Dictionary</h1>
       </header>
 
       <main>
         <Dictionary />
       </main>
 
-      <footer>
+      <footer className='text-center'>
         <a href="https://github.com/havoriskova/dictionary" target="_blank" rel="noreferrer">GitHub repo</a>
       </footer>
     </div>

@@ -3,7 +3,7 @@
 const Meaning = ({data}) => {
 
     return (
-        <div className="Meaning container">
+        <div className="Meaning container content-container">
             <h3>{data.partOfSpeech}</h3>
 
             {data.definitions.map((definition, index) => {

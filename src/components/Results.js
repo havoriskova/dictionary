@@ -6,7 +6,7 @@ const Results = ({data}) => {
 
     return(
         <div className='Results container'>  
-            <header>
+            <header className='text-center content-container'>
                 <h2>{data.word}</h2>
                 <div>phonetic: {data.phonetic}</div>
             </header>

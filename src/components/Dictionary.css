@@ -1,5 +1,12 @@
-.Dictionary form {
-    background-color: aqua;
+.Dictionary .content-container {
+    background-color: var(--secondary-color);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* .Dictionary .Results {
@@ -11,8 +18,14 @@
     background-blend-mode: multiply;
 } */
 
-.Dictionary .Results > * {
-    background-color: aqua;
-    margin: 1rem auto;
+
+.Dictionary .Meaning.container > * {
+    padding: .5rem 0;
 }
 
+@media (max-width: 800px) {
+    .Dictionary .content-container {
+            margin: 1rem;
+        }
+
+}
