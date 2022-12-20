@@ -1,4 +1,4 @@
-
+import Synonyms from './Synonyms';
 
 const Meaning = ({data}) => {
 
@@ -13,9 +13,9 @@ const Meaning = ({data}) => {
                 </div>
             })}
             
-            {(data.synonyms.length) ? <div>Synonyms: {data.synonyms.map((synonym, index) => {
-                return <span key={index} className="italic-text">{synonym} </span>
-            })}</div> : null}
+            { (data.synonyms.length) ? (
+                <Synonyms synonyms={data.synonyms} />
+            ) : (null) }
             
         </div>
     )
