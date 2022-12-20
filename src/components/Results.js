@@ -8,7 +8,16 @@ const Results = ({data}) => {
         <div className='Results container'>  
             <header className='text-center content-container'>
                 <h2>{data.word}</h2>
-                <div className='italic-text'>phonetic: {data.phonetic}</div>
+                
+                <div className='phonetics-container'>
+                {data.phonetics.map((phonetic, index) => { 
+                    return <div key={index} className='phonetic-container'>
+                        <span className='italic-text'>phonetic: {phonetic.text}</span>
+                        <audio controls src={phonetic.audio}></audio>
+                    </div>
+                })}
+                </div>
+
             </header>
             
             { data.meanings.map((meaning, index) => { 
