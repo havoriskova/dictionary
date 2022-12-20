@@ -17,7 +17,7 @@ const Dictionary = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(keyword);
+        //console.log(keyword);
         let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
         axios.get(apiUrl)
             	.then(handleResponse)
@@ -28,7 +28,7 @@ const Dictionary = () => {
         setIsError(false);
         //console.log(res);
         console.log(res.data); // axios always puts response into 'data'
-        console.log(res.data[0].meanings[0].definitions[0].definition);
+        //console.log(res.data[0].meanings[0].definitions[0].definition);
         setData(res.data[0]);
 
     }
@@ -36,10 +36,10 @@ const Dictionary = () => {
 
     const handleError = (res) => {
         console.log(res);
-        console.log(res.response.request.status);
+        //console.log(res.response.request.status);
         setIsError(true);
         setErrorNum(res.response.request.status);
-        console.log(isErr);
+        //console.log(isErr);
         setErrorImg(`https://http.cat/${res.response.request.status}.jpg`);
 
     }

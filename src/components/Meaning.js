@@ -1,4 +1,3 @@
-import Synonyms from './Synonyms';
 
 const Meaning = ({data}) => {
 
@@ -8,13 +7,17 @@ const Meaning = ({data}) => {
 
             {data.definitions.map((definition, index) => {
                 return <div key={index}>
-                    <div>Definition: {definition.definition}</div>
-                    { (definition.example) ? <div>Example: {definition.example}</div> : null }
+                    <div><span className="bold-text">Definition:</span> {definition.definition}</div>
+                    { (definition.example) ? <div><span className="bold-text">Example:</span> {definition.example}</div> : null }
                 </div>
             })}
             
             { (data.synonyms.length) ? (
-                <Synonyms synonyms={data.synonyms} />
+                 <div>
+                    <span className="italic-text">{
+                    [...new Set(data.synonyms)].join(' - ')}</span>
+                    {/*Set object mi maze value z array, co jsou duplikaty */}
+                </div>
             ) : (null) }
             
         </div>
