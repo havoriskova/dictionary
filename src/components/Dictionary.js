@@ -7,7 +7,8 @@ const Dictionary = () => {
 
     const [keyword, setKeyword] = useState('yoga');
     const [isErr, setIsError] = useState(false);
-    const [src, setSrc] = useState('');
+    const [errorNum, setErrorNum] = useState('');
+    const [errorImg, setErrorImg] = useState('');
     const [data, setData] = useState('');
 
     const updateKeyword = (e) => {
@@ -37,19 +38,22 @@ const Dictionary = () => {
         console.log(res);
         console.log(res.response.request.status);
         setIsError(true);
-        setSrc(`https://http.cat/${res.response.request.status}.jpg`);
+        setErrorNum(res.response.request.status);
         console.log(isErr);
+        setErrorImg(`https://http.cat/${res.response.request.status}.jpg`);
 
     }
  
     return(
         <div className="Dictionary container">
-            <form onSubmit={handleSubmit} className="section-container">
+            <form onSubmit={handleSubmit}>
                 <input type='search' placeholder="Type a word" autoFocus
                 onChange={updateKeyword}></input>
             </form>
 
-            {isErr ? (<img src={src} alt="" />) : null}
+            {isErr ? (<div><img src={errorImg} alt="error message with funny cat" />
+            <p>Error number {errorNum} </p></div>) : null}
+
             { !isErr && data ? <Results data={data} /> : null }
 
         </div>

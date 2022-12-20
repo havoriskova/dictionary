@@ -1,17 +1,20 @@
 import Meaning from './Meaning';
+import Gallery from './Gallery';
 
 const Results = ({data}) => {
 
 
     return(
-        <div className='data-section'>  
-            <h2>{data.word}</h2>
-            <div className='data'>phonetic: {data.phonetic}</div>
-
-            {/* {data.meanings[0].definitions[0].definition} */}
+        <div className='Results container'>  
+            <header>
+                <h2>{data.word}</h2>
+                <div>phonetic: {data.phonetic}</div>
+            </header>
             
-            { data.meanings.map((meaning, index) => { return <Meaning key={index} data={meaning}/>})}
+            { data.meanings.map((meaning, index) => { 
+                return <Meaning key={index} data={meaning}/>})}
                 
+            <Gallery data={data.word}/>
         </div>
     )
 }

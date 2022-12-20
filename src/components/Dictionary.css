@@ -1,13 +1,18 @@
-.Dictionary .section-container {
+.Dictionary form {
     background-color: aqua;
 }
 
-.Dictionary .data-section {
+/* .Dictionary .Results {
     backdrop-filter: saturate(80%);
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/image.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: orange;
     background-blend-mode: multiply;
-  
+} */
+
+.Dictionary .Results > * {
+    background-color: aqua;
+    margin: 1rem auto;
 }
+
