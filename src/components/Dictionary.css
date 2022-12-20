@@ -9,6 +9,10 @@
     text-align: center;
 }
 
+.italic-text {
+    font-style: italic;
+}
+
 /* .Dictionary .Results {
     backdrop-filter: saturate(80%);
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14179/image.jpg');
@@ -18,6 +22,9 @@
     background-blend-mode: multiply;
 } */
 
+.Dictionary form input {
+    width: 100%;
+}
 
 .Dictionary .Meaning.container > * {
     padding: .5rem 0;

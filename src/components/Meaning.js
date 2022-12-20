@@ -14,7 +14,7 @@ const Meaning = ({data}) => {
             })}
             
             {(data.synonyms.length) ? <div>Synonyms: {data.synonyms.map((synonym, index) => {
-                return <span key={index}>{synonym}</span>
+                return <span key={index} className="italic-text">{synonym} </span>
             })}</div> : null}
             
         </div>

@@ -8,7 +8,7 @@ const Results = ({data}) => {
         <div className='Results container'>  
             <header className='text-center content-container'>
                 <h2>{data.word}</h2>
-                <div>phonetic: {data.phonetic}</div>
+                <div className='italic-text'>phonetic: {data.phonetic}</div>
             </header>
             
             { data.meanings.map((meaning, index) => { 
