@@ -63,6 +63,7 @@ const Dictionary = ({ defaultKeyword }) => {
             <form onSubmit={handleSubmit} className="text-center content-container">
                 <input type='search' placeholder="Type a word" defaultValue={defaultKeyword} autoFocus
                 onChange={updateKeyword}></input>
+                <div className='hint'>for example: door, wine, ukulele,...</div>
             </form>
 
             {isErr ? (<div className='content-container text-center'>

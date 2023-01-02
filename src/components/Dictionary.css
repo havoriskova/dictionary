@@ -43,6 +43,13 @@
     box-shadow: 0 0 0 4px rgba(31, 116, 152, 0.3);
 }
 
+.Dictionary .hint {
+    margin-top: 1rem;
+    font-size: .8rem;
+    text-align: start;
+}
+
+
 .Dictionary .phonetics-container {
  display: flex;
  place-content: center;
