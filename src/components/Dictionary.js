@@ -2,27 +2,35 @@ import {useState} from 'react';
 import axios from 'axios';
 import './Dictionary.css';
 import Results from './Results';
+import Loader from './Loader';
 
-const Dictionary = () => {
+const Dictionary = ({ defaultKeyword }) => {
 
-    const [keyword, setKeyword] = useState('yoga');
+    const [keyword, setKeyword] = useState(defaultKeyword);
     const [isErr, setIsError] = useState(false);
     const [errorNum, setErrorNum] = useState('');
     const [errorImg, setErrorImg] = useState('');
     const [data, setData] = useState('');
+    const [loaded, setLoaded] = useState(false);
 
     const updateKeyword = (e) => {
         setKeyword(e.target.value);
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        //console.log(keyword);
+
+    const search = () => {
         let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
         axios.get(apiUrl)
             	.then(handleResponse)
                 .catch(handleError);
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //console.log(keyword);
+        search();
+    }
+
 
     const handleResponse = (res) => {
         setIsError(false);
@@ -44,10 +52,16 @@ const Dictionary = () => {
 
     }
  
-    return(
+    const init = () => {
+        setLoaded(true);
+        search();
+    }
+    
+    if (loaded) {
+    return (
         <div className="Dictionary container">
             <form onSubmit={handleSubmit} className="text-center content-container">
-                <input type='search' placeholder="Type a word" autoFocus
+                <input type='search' placeholder="Type a word" defaultValue={defaultKeyword} autoFocus
                 onChange={updateKeyword}></input>
             </form>
 
@@ -59,7 +73,10 @@ const Dictionary = () => {
             { !isErr && data ? <Results data={data} /> : null }
 
         </div>
-    )
+    ) } else {
+        <Loader />
+        init();
+    }
 
 }
 

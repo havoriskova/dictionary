@@ -1,14 +1,14 @@
 
-const Meaning = ({data}) => {
+const Meaning = ({data, word}) => {
 
     return (
         <div className="Meaning container content-container">
-            <h3>{data.partOfSpeech}</h3>
+            <h3>{word[0].toUpperCase() + word.slice(1)} as a {data.partOfSpeech}</h3>
 
             {data.definitions.map((definition, index) => {
-                return <div key={index}>
+                return <div key={index} className="definition-container">
                     <div><span className="bold-text">Definition:</span> {definition.definition}</div>
-                    { (definition.example) ? <div><span className="bold-text">Example:</span> {definition.example}</div> : null }
+                    { (definition.example) ? <div  className="italic-text"><span>Example:</span> <span>{definition.example}</span></div> : null }
                 </div>
             })}
             
