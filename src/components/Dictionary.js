@@ -61,13 +61,14 @@ const Dictionary = ({ defaultKeyword }) => {
     return (
         <div className="Dictionary container">
             <form onSubmit={handleSubmit} className="text-center content-container">
+                <h2>What word do you want to look up?</h2>
                 <input type='search' placeholder="Type a word" defaultValue={defaultKeyword} autoFocus
                 onChange={updateKeyword}></input>
-                <div className='hint'>for example: door, wine, ukulele,...</div>
+                <div className='hint'>for example: door, wine, origami, ukulele,...</div>
             </form>
 
             {isErr ? (<div className='content-container text-center'>
-                <p>Error number {errorNum} </p>
+                <p>Error number {errorNum}. </p>
                 <img src={errorImg} alt="error message with funny cat" />
             </div>) : null}
 

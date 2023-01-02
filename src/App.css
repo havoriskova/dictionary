@@ -16,15 +16,37 @@ img {
   --accent-color: rgb(117, 86, 211);
   max-width: 800px;
   margin: 0 auto;
+  color: rgb(49, 49, 49);
 }
 
 .App-header {
-  background-color: var(--primary-color);
+  color: transparent;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--secondary-color);
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  background-image: url('https://images.unsplash.com/photo-1528459199957-0ff28496a7f6');
+  background-size: cover;
+  background-clip: text;
+}
+
+@media (max-width: 830px) {
+  .App-header {
+    font-size: 3rem;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .App-header {
+      font-size: 2rem;
+    }
+  
+}
+
+@media (max-width: 350px) {
+  .App-header {
+    font-size: 1.5rem;
+  }
+
 }
