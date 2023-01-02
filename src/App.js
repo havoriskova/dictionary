@@ -14,7 +14,8 @@ function App() {
       </main>
 
       <footer className='text-center'>
-        <a href="https://github.com/havoriskova/dictionary" target="_blank" rel="noreferrer">GitHub repo</a>
+        Coded by <a href="https://www.linkedin.com/in/hanavoriskova/?locale=en_US" target="_blank" rel="noreferrer"> Hana Voriskova</a>. 
+        The code is <a href="https://github.com/havoriskova/dictionary" target="_blank" rel="noreferrer">open-sourced on GitHub</a>.
       </footer>
     </div>
   );
