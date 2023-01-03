@@ -20,12 +20,14 @@ const Dictionary = ({ defaultKeyword }) => {
 
 
     const search = () => {
+        // API DOCUMENTATION: https://dictionaryapi.dev/
         let apiUrlDictionary = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
         axios.get(apiUrlDictionary)
             	.then(handleDictionaryResponse)
                 .catch(handleDictionaryError);
 
 
+        // API DOCUMENTATION: https://www.pexels.com/api/documentation/
         let apiPexelKey = '563492ad6f91700001000001e9e6f6ec232144e490e492cd2ab7f74f';
         let apiUrlPexel = `https://api.pexels.com/v1/search?query=${keyword}&size=medium`;
         axios.get(apiUrlPexel, {headers: {"Authorization": `Bearer ${apiPexelKey}`}})

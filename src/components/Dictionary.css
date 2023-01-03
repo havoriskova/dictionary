@@ -86,9 +86,17 @@
 
 
 .Dictionary .Gallery {
-    display: grid;
-    
+    display: flex;
+    flex-wrap: wrap;
+
 }
+
+.Dictionary .Gallery div {
+    min-width: 200px;
+    max-width: 50%;
+    /* background-image: attr(data-src url); NEFUNGUJE  */
+}
+
 
 @media (max-width: 700px) {
     
