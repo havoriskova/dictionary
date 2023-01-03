@@ -1,7 +1,7 @@
 import Meaning from './Meaning';
 import Gallery from './Gallery';
 
-const Results = ({data}) => {
+const Results = ({dataDictionary: data, dataPictures}) => {
 
 
     const play = (e) => {
@@ -31,7 +31,7 @@ const Results = ({data}) => {
             { data.meanings.map((meaning, index) => { 
                 return <Meaning key={index} data={meaning} word={data.word}/>})}
                 
-            <Gallery data={data.word}/>
+            <Gallery pictures={dataPictures}/>
         </div>
     )
 }

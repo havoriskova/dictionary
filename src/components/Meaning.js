@@ -13,7 +13,7 @@ const Meaning = ({data, word}) => {
             })}
             
             { (data.synonyms.length) ? (
-                 <div>
+                 <div><span className="bold-text">Synonyms: </span>
                     <span className="italic-text">{
                     [...new Set(data.synonyms)].join(' - ')}</span>
                     {/*Set object mi maze value z array, co jsou duplikaty */}
