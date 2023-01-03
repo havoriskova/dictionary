@@ -8,7 +8,7 @@ const Gallery = ({pictures}) => {
     return (
         <div className="Gallery container content-container">
             { pictures.slice(0, 6).map((picture, index) => { 
-                return (<div  key={index} data-src={picture.src.medium}>
+                return (<div  key={index}>
                     <img alt="" src={picture.src.medium} />
                 </div>)})
                 }

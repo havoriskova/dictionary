@@ -29,7 +29,7 @@ const Dictionary = ({ defaultKeyword }) => {
 
         // API DOCUMENTATION: https://www.pexels.com/api/documentation/
         let apiPexelKey = '563492ad6f91700001000001e9e6f6ec232144e490e492cd2ab7f74f';
-        let apiUrlPexel = `https://api.pexels.com/v1/search?query=${keyword}&size=medium`;
+        let apiUrlPexel = `https://api.pexels.com/v1/search?query=${keyword}&size=medium&orientation=landscape`;
         axios.get(apiUrlPexel, {headers: {"Authorization": `Bearer ${apiPexelKey}`}})
             .then(handlePexelResponse)
             .catch(handlePexelError)

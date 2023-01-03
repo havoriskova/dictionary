@@ -97,15 +97,7 @@
     /* background-image: attr(data-src url); NEFUNGUJE  */
 }
 
-
-@media (max-width: 700px) {
-    
-    .Dictionary .phonetic-container {
-        align-items: center; /**/
-    }
-}
-
-.Dictionary .Meaning.container > * {
+.Dictionary .Meaning.container>* {
     padding: .5rem 0;
 }
 
@@ -115,3 +107,19 @@
         }
 
 }
+
+@media (max-width: 700px) {
+
+    .Dictionary .phonetic-container {
+        align-items: center;
+        /**/
+    }
+}
+
+@media (max-width: 550px) {
+    .Dictionary .Gallery div {
+            max-width: 100%;
+            /* background-image: attr(data-src url); NEFUNGUJE  */
+        }
+}
+
