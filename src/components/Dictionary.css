@@ -103,6 +103,14 @@
 
 .Dictionary .Gallery .picture-container img {
     height: 100%; /*because I receive landscape img, I can set the height on 100% to fill the parent div*/
+    position: relative; /* -||- */
+    left: -25%; /* -||- */
+    transition: transform .5s ease;
+    cursor: pointer;
+}
+
+.Dictionary .Gallery .picture-container img:hover {
+    transform: scale(1.1);
 }
 
 .Dictionary .Meaning.container>* {
