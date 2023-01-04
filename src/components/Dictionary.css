@@ -86,15 +86,23 @@
 
 
 .Dictionary .Gallery {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-
+    gap: 2%; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
 }
 
-.Dictionary .Gallery div {
-    min-width: 200px;
-    max-width: 50%;
+.Dictionary .Gallery .picture-container {
+    aspect-ratio: 1 / 1;
+    border-radius: 2%;
+    overflow: hidden;
     /* background-image: attr(data-src url); NEFUNGUJE  */
+}
+
+.Dictionary .Gallery .picture-container img {
+    height: 100%; /*because I receive landscape img, I can set the height on 100% to fill the parent div*/
 }
 
 .Dictionary .Meaning.container>* {
@@ -114,12 +122,5 @@
         align-items: center;
         /**/
     }
-}
-
-@media (max-width: 550px) {
-    .Dictionary .Gallery div {
-            max-width: 100%;
-            /* background-image: attr(data-src url); NEFUNGUJE  */
-        }
 }
 

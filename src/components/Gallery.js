@@ -3,17 +3,24 @@ const Gallery = ({pictures}) => {
 
   
 // pictures je array, kde potrebuju dat max. pocet, napr. 6 -> slice method
-// onClick function -> vytvoreni noveho elementu pres celou stranku + sipky doleva doprava
+//                  ALE primo v API call muzu dat per_page=6
+// onClick function -> vytvoreni noveho elementu pres celou stranku na picture.src.original
+//                     + sipky doleva doprava
 
-    return (
-        <div className="Gallery container content-container">
-            { pictures.slice(0, 6).map((picture, index) => { 
-                return (<div  key={index}>
-                    <img alt="" src={picture.src.medium} />
-                </div>)})
+
+    if (pictures) {
+        return (
+            <div className="Gallery container content-container">
+                { pictures.map((picture, index) => { 
+                    return (<div  className="picture-container" key={index}>
+                        <img alt="" src={picture.src.medium} />
+                    </div>)})
                 }
-        </div>
-    )
+            </div>
+        )  
+    } else {
+        return null
+    }
 }
 
 export default Gallery;
