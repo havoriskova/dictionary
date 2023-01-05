@@ -9,12 +9,15 @@
   --primary-color: #562;
   --secondary-color: rgb(246, 246, 246);
   --accent-color: rgb(117, 86, 211);
-  max-width: 800px;
-  margin: 0 auto;
   color: rgb(49, 49, 49);
 }
 
-.App-header {
+.Container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.Container-header {
   color: transparent;
   padding: 1rem;
   text-align: center;
@@ -25,7 +28,7 @@
   background-clip: text;
 }
 
-.App-header h1 {
+.Container-header h1 {
   display: flex;
   justify-content: space-between;
 
@@ -46,14 +49,30 @@
   font-weight: 500;
 }
 
+.App .showImg-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0 0 0 / .5);
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+
+.App .showImg {
+  border-radius: 5px;
+}
+
 @media (max-width: 830px) {
-  .App-header {
+  .Container-header {
     font-size: 3rem;
   }
 }
 
 @media (max-width: 520px) {
-  .App-header {
+  .Container-header {
       font-size: 2rem;
       padding-bottom: 0;
     }
@@ -61,7 +80,7 @@
 }
 
 @media (max-width: 350px) {
-  .App-header {
+  .Container-header {
     font-size: 1.5rem;
   }
 

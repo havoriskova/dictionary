@@ -101,17 +101,21 @@
     /* background-image: attr(data-src url); NEFUNGUJE  */
 }
 
-.Dictionary .Gallery .picture-container img {
+.Dictionary .Gallery .picture {
     height: 100%; /*because I receive landscape img, I can set the height on 100% to fill the parent div*/
     position: relative; /* -||- */
     left: -25%; /* -||- */
-    transition: transform .5s ease;
+    transition: transform .5s ease, filter .5s ease;
     cursor: pointer;
+    filter: grayscale(50%);
 }
 
-.Dictionary .Gallery .picture-container img:hover {
-    transform: scale(1.1);
+.Dictionary .Gallery .picture:hover {
+    transform: scale(1.05);
+    filter: grayscale(20%);
 }
+
+
 
 .Dictionary .Meaning.container>* {
     padding: .5rem 0;

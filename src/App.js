@@ -1,33 +1,32 @@
 //import logo from './logo.svg';     <img src={logo} className="App-logo" alt="logo" />
+import {useState} from 'react';
 import './App.css';
-import Dictionary from './components/Dictionary';
+import Container from './components/Container';
 
 function App() {
+
+  const [isImg, setIsImg] = useState(false);
+  const [imgEl, setImgEl] = useState('');
+
+ const stopDisplayImg = (e) => {
+  //console.dir(e.target);
+
+  if (e.target.classList[0] !== "showImg") {
+  setIsImg(false);}
+
+ }
+
+  const showImgFromGallery = (src) => {
+    const imgEl = <div className="showImg-container" onClick={stopDisplayImg}><img className="showImg" alt="" src={src}/></div>;
+    setImgEl(imgEl);
+    setIsImg(true);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>
-          <span>D</span>
-          <span>i</span>
-          <span>c</span>
-          <span>t</span>
-          <span>i</span>
-          <span>o</span>
-          <span>n</span>
-          <span>a</span>
-          <span>r</span>
-          <span>y</span>
-        </h1>
-      </header>
-
-      <main>
-        <Dictionary defaultKeyword='yoga'/>
-      </main>
-
-      <footer className='text-center'>
-        Coded by <a href="https://www.linkedin.com/in/hanavoriskova/?locale=en_US" target="_blank" rel="noreferrer"> Hana Voriskova</a>. 
-        The code is <a href="https://github.com/havoriskova/dictionary" target="_blank" rel="noreferrer">open-sourced on GitHub</a>.
-      </footer>
+      {(isImg) ? imgEl : null}
+     <Container functionShowImg={showImgFromGallery}/>
     </div>
   );
 }

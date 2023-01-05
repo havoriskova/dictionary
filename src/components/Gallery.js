@@ -1,5 +1,7 @@
+// import {useState} from 'react';
 
-const Gallery = ({pictures}) => {
+
+const Gallery = ({pictures, functionShowImg}) => {
 
   
 // pictures je array, kde potrebuju dat max. pocet, napr. 6 -> slice method
@@ -7,9 +9,15 @@ const Gallery = ({pictures}) => {
 // onClick function -> vytvoreni noveho elementu pres celou stranku na picture.src.landscape
 //                     + sipky doleva doprava
 
-    const handleClick = (e) => {
-      console.log(e.target.dataset.src);
+    // const [showImg, setShowImg] = useState(false);
+    // const [srcImg, setSrcImg] = useState('');
 
+
+    const handleClick = (e) => {
+      const src = e.target.dataset.src;
+    //   setSrcImg(src);
+    //   setShowImg(true);
+      functionShowImg(src);
     }
 
 
@@ -18,9 +26,11 @@ const Gallery = ({pictures}) => {
             <div className="Gallery container content-container">
                 { pictures.map((picture, index) => { 
                     return (<div  className="picture-container" key={index}>
-                        <img alt="" src={picture.src.large} data-src={picture.src.original} onClick={handleClick} />
+                        <img className="picture" alt="" src={picture.src.medium} data-src={picture.src.medium} onClick={handleClick} />
                     </div>)})
                 }
+
+                {/* { (showImg) ? (<div className="showImg-container"><img alt="" src={srcImg}/></div>) : null} */}
             </div>
         )  
     } else {

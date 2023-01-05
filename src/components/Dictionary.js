@@ -4,7 +4,7 @@ import './Dictionary.css';
 import Results from './Results';
 import Loader from './Loader';
 
-const Dictionary = ({ defaultKeyword }) => {
+const Dictionary = ({ defaultKeyword, functionShowImg }) => {
 
     const [keyword, setKeyword] = useState(defaultKeyword);
     const [isErr, setIsError] = useState(false);
@@ -95,7 +95,7 @@ const Dictionary = ({ defaultKeyword }) => {
                 <img src={errorImg} alt="error message with funny cat" />
             </div>) : null}
 
-            { !isErr && dataDictionary ? <Results dataDictionary={dataDictionary} dataPictures={dataPictures} /> : null }
+            { !isErr && dataDictionary ? <Results dataDictionary={dataDictionary} dataPictures={dataPictures} functionShowImg={functionShowImg} /> : null }
 
         </div>
     ) } else {
