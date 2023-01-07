@@ -1,7 +1,7 @@
 //import logo from './logo.svg';     <img src={logo} className="App-logo" alt="logo" />
 import Dictionary from './Dictionary';
 
-function Container({functionShowImg}) {
+function Container({getSrcOfImages, getIndexOfImage}) {
 
 
   return (
@@ -22,7 +22,7 @@ function Container({functionShowImg}) {
       </header>
 
       <main>
-        <Dictionary defaultKeyword='yoga' functionShowImg={functionShowImg}/>
+        <Dictionary defaultKeyword='yoga' getSrcOfImages={getSrcOfImages} getIndexOfImage={getIndexOfImage}/>
       </main>
 
       <footer className='text-center'>

@@ -4,7 +4,7 @@ import './Dictionary.css';
 import Results from './Results';
 import Loader from './Loader';
 
-const Dictionary = ({ defaultKeyword, functionShowImg }) => {
+const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
 
     const [keyword, setKeyword] = useState(defaultKeyword);
     const [isErr, setIsError] = useState(false);
@@ -64,8 +64,11 @@ const Dictionary = ({ defaultKeyword, functionShowImg }) => {
     }
 
     const handlePexelResponse = (res) => {
-        console.log(res.data.photos[0].src.landscape);
+        //console.log(res.data.photos[0].src.landscape);
         setDataPictures(res.data.photos); //tj., bude to array
+
+        let srcOfImages = res.data.photos.map(item => item.src.medium);
+        getSrcOfImages(srcOfImages);
     }
 
     const handlePexelError = (err) => {
@@ -95,7 +98,7 @@ const Dictionary = ({ defaultKeyword, functionShowImg }) => {
                 <img src={errorImg} alt="error message with funny cat" />
             </div>) : null}
 
-            { !isErr && dataDictionary ? <Results dataDictionary={dataDictionary} dataPictures={dataPictures} functionShowImg={functionShowImg} /> : null }
+            { !isErr && dataDictionary ? <Results dataDictionary={dataDictionary} dataPictures={dataPictures} getIndexOfImage={getIndexOfImage}/> : null }
 
         </div>
     ) } else {

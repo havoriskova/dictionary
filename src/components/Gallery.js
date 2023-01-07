@@ -1,7 +1,7 @@
 // import {useState} from 'react';
 
 
-const Gallery = ({pictures, functionShowImg}) => {
+const Gallery = ({pictures, getIndexOfImage}) => {
 
   
 // pictures je array, kde potrebuju dat max. pocet, napr. 6 -> slice method
@@ -14,10 +14,10 @@ const Gallery = ({pictures, functionShowImg}) => {
 
 
     const handleClick = (e) => {
-      const src = e.target.dataset.src;
+      //const src = e.target.dataset.src;
     //   setSrcImg(src);
     //   setShowImg(true);
-      functionShowImg(src);
+      getIndexOfImage(e.target.id);
     }
 
 
@@ -26,7 +26,7 @@ const Gallery = ({pictures, functionShowImg}) => {
             <div className="Gallery container content-container">
                 { pictures.map((picture, index) => { 
                     return (<div  className="picture-container" key={index}>
-                        <img className="picture" alt="" src={picture.src.medium} data-src={picture.src.medium} onClick={handleClick} />
+                        <img className="picture" id={index} alt="" src={picture.src.medium} data-src={picture.src.medium} onClick={handleClick} />
                     </div>)})
                 }
 

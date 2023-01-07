@@ -7,6 +7,7 @@ function App() {
 
   const [isImg, setIsImg] = useState(false);
   const [imgEl, setImgEl] = useState('');
+  const [srcOfImages, setSrcOfImages] = useState([]);
 
  const stopDisplayImg = (e) => {
   //console.dir(e.target);
@@ -22,11 +23,21 @@ function App() {
     setIsImg(true);
   }
 
+  const getSrcOfImages = (srcOfImages) => {
+    setSrcOfImages(srcOfImages);
+  }
+
+  const getIndexOfImage = (index) => {
+    const  src = srcOfImages[index];
+    showImgFromGallery(src);
+
+  }
+
 
   return (
     <div className="App">
       {(isImg) ? imgEl : null}
-     <Container functionShowImg={showImgFromGallery}/>
+     <Container getSrcOfImages={getSrcOfImages} getIndexOfImage={getIndexOfImage}/>
     </div>
   );
 }
