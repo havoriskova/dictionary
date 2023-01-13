@@ -17,15 +17,25 @@
     margin: 0 auto;
 }
 
+.App .icon {
+height: 35px;
+}
+
+.Container .container-hero-section {
+  position: absolute;
+  inset: 0;
+  /* background-color: rgba(0 0 0 / .1); */
+}
+
 .Container-header {
   color: transparent;
   padding: 1rem;
   text-align: center;
   font-size: 4rem;
-  /* letter-spacing: 1rem; */
-  background-image: url('https://images.unsplash.com/photo-1528459199957-0ff28496a7f6');
+  background-image: url('./img/bkg-h1.jpg');
   background-size: cover;
   background-clip: text;
+  filter: brightness(130%);
 }
 
 .Container-header h1 {
@@ -49,6 +59,20 @@
   font-weight: 500;
 }
 
+.App footer .social-links-container, .App footer .social-links-container > * {
+ margin: 1rem; 
+}
+
+.App footer .social-links-container a:hover > img {
+filter: brightness(125%);
+}
+
+.App footer a:visited, .App footer a:visited > img {
+  filter: brightness(150%);
+}
+
+
+
 .App .showImg-container {
   position: fixed;
   top: 0;
@@ -64,6 +88,45 @@
 .App .showImg {
   border-radius: 5px;
 }
+
+
+@media (min-width: 1200px) {
+ .Container-header {
+  /*hero section together with the Dictionary form */
+    min-height: 85vh;
+    margin-left: -10rem;
+ }
+
+ .Container .form-container {
+  width: 80%;
+  top: 45vh;
+  position: absolute;
+  margin-left: -8.5rem;
+ }
+
+ .Container form {
+ max-width: 70%;
+ position: absolute;
+ left: 0;
+
+ }
+
+ .Container .container-hero-section {
+  height: 95vh;
+ }
+}
+
+@media (max-width: 1200px) {
+  .Container-header {
+    min-height: 75vh;
+  }
+
+  .Container .container-hero-section {
+    /*flex do sirky containeru*/
+    height: 85vh;
+  }
+}
+
 
 @media (max-width: 830px) {
   .Container-header {

@@ -15,11 +15,12 @@ const Results = ({dataDictionary: data, dataPictures, getIndexOfImage}) => {
             <header className='text-center content-container'>
                 <h2>{data.word}</h2>
                 
-                <div className='phonetics-container'>
+                <div className='phonetics-container'>phonetic:
                 {data.phonetics.map((phonetic, index) => { 
                     return <div key={index} className='phonetic-container'>
-                                <span className='italic-text'>phonetic: {phonetic.text}</span>
-                                { phonetic.audio ? (<div className="audio-container" onClick={play} data-src={phonetic.audio}> 🔊
+                                <span className='italic-text'>{phonetic.text}</span>
+                                { phonetic.audio ? (<div className="audio-container" onClick={play} data-src={phonetic.audio}> 
+                                        <img className='icon icon-sound' alt='' src="/img/sound.png"/>
                                     <audio controls src={phonetic.audio}></audio>
                                 </div>) : null }
                     </div>

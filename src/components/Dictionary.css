@@ -27,9 +27,17 @@
     background-blend-mode: multiply;
 } */
 
-.Dictionary form input {
-    width: 100%;
+
+.Dictionary form .flex-parent {
+    display: flex;
+    gap: 3%;
     height: 3rem;
+}
+
+
+.Dictionary form input[type='search'] {
+    width: 75%;
+    flex-shrink: 1;
     border: solid 1px rgba(0 0 0 / .2);
     border-radius: 5px;
     padding: 0 1rem;
@@ -37,13 +45,35 @@
     background-color: var(--secondary-color);
 }
 
-.Dictionary form input:focus-visible {
+.Dictionary form input[type='search']:focus-visible {
     outline: none;
 }
 
-.Dictionary form input:focus {
+.Dictionary form input[type='search']:focus {
     box-shadow: 0 0 0 4px rgba(31, 116, 152, 0.3);
 }
+
+.Dictionary form .search-button {
+    background-image: url('../img/bkg-button.jpg');
+    background-size: cover;
+    color: white;
+    min-width: 22%;
+    flex-shrink: 0;
+    padding: 0 .5rem;
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    letter-spacing: .2rem;
+
+}
+
+.Dictionary form .search-button:hover {
+    cursor: pointer;
+    box-shadow:  4px 4px rgba(0 0 0 / .5);
+    filter: brightness(110%);
+}
+
 
 .Dictionary .hint {
     margin-top: 1rem;
@@ -70,6 +100,11 @@
     align-items: center;
 }
 
+.Dictionary .phonetic-container .icon-sound {
+    pointer-events: none;
+}
+
+
 .Dictionary audio {
     border: solid 2px red; 
     display: none;
@@ -78,6 +113,10 @@
 .Dictionary .audio-container {
     margin-left: 1rem;
     cursor: pointer;
+}
+
+.Dictionary .audio-container:hover {
+    filter: brightness(120%);
 }
 
 .Dictionary .definition-container > * {
@@ -134,5 +173,6 @@
         align-items: center;
         /**/
     }
+
 }
 

@@ -84,12 +84,17 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
     if (loaded) {
     return (
         <div className="Dictionary container">
-            <form onSubmit={handleSubmit} className="text-center content-container">
-                <h2>What word do you want to look up?</h2>
-                <input type='search' placeholder="Type a word" defaultValue={defaultKeyword} autoFocus
-                onChange={updateKeyword}></input>
-                <div className='hint'>for example: door, wine, origami, ukulele,...</div>
-            </form>
+            <div className='form-container'>
+                <form onSubmit={handleSubmit} className="text-center content-container">
+                    <h2>What word do you want to look up?</h2>
+                    <div className='flex-parent'>
+                        <input type='search' placeholder="Type a word" defaultValue={defaultKeyword} autoFocus
+                        onChange={updateKeyword}></input>
+                        <button type='submit' className='search-button'>Search</button>
+                    </div>
+                    <div className='hint'>for example: door, wine, origami, ukulele,...</div>
+                </form>
+            </div>
 
             {isErr ? (<div className='content-container text-center'>
                 {errorNum === 404 ? (<p>Uups.. the word you've been looking for we don't have in our database 😥 Please, try something else.</p>) : 
