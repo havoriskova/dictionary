@@ -27,6 +27,49 @@ height: 35px;
   /* background-color: rgba(0 0 0 / .1); */
 }
 
+
+/************* HERO IMAGES***********/
+
+.Container .container-hero-section .flex-parent-human {
+display: flex;
+justify-content: flex-end;
+align-items: flex-end;
+position: absolute;
+inset: 0;
+}
+
+.Container .container-hero-section .hero-teaset {
+  width: 200px;
+}
+
+.Container .container-hero-section .hero-teapot {
+width: 160px;
+}
+
+.Container .container-hero-section .hero-teacup {
+  width: 80px;
+  position: absolute;
+  right: 40%;
+  bottom: -20px;
+}
+
+.Container .container-hero-section .hero-plate {
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+}
+
+.Container .container-hero-section .hero-human {
+  width: 320px;
+}
+.Container .container-hero-section .hero-books {
+  width: 200px;
+}
+
+
+
+/*****************/ 
+
 .Container-header {
   color: transparent;
   padding: 1rem;
@@ -124,6 +167,10 @@ filter: brightness(125%);
   .Container .container-hero-section {
     /*flex do sirky containeru*/
     height: 85vh;
+  }
+
+  .Container .container-hero-section .hero-teaset {
+    display: none;
   }
 }
 
