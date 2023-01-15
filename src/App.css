@@ -13,7 +13,7 @@
 }
 
 
-.Container .Results, .Container footer {
+.Container .Results, .Container footer, .Container .error-container {
     max-width: 800px;
     margin: 0 auto;
 }

@@ -96,7 +96,7 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
                 </form>
             </div>
 
-            {isErr ? (<div className='content-container text-center'>
+            {isErr ? (<div className='content-container error-container text-center'>
                 {errorNum === 404 ? (<p>Uups.. the word you've been looking for we don't have in our database 😥 Please, try something else.</p>) : 
                 (<p>Error number {errorNum}. </p>) }
 
