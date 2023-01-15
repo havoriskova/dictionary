@@ -100,7 +100,7 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
                 {errorNum === 404 ? (<p>Uups.. the word you've been looking for we don't have in our database 😥 Please, try something else.</p>) : 
                 (<p>Error number {errorNum}. </p>) }
 
-                <img src={errorImg} alt="error message with funny cat" />
+                <img className='error-img' src={errorImg} alt="error message with funny cat" />
             </div>) : null}
 
             { !isErr && dataDictionary ? <Results dataDictionary={dataDictionary} dataPictures={dataPictures} getIndexOfImage={getIndexOfImage}/> : null }
