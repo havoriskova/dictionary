@@ -9,9 +9,9 @@ function Container({getSrcOfImages, getIndexOfImage}) {
       <div className='container-hero-section'>
         <div className='flex-parent-human'>
           <div className='hero-teaset'> 
-            <img className="hero-teapot" src='/img/teapot.png' alt='' />
-            <img className="hero-teacup" src='/img/teacup.png' alt='' />
-            <img className="hero-plate" src='/img/plate.png' alt='' />
+            <div> <img className="hero-teapot" src='/img/teapot.png' alt='' /> </div>
+            <div> <img className="hero-teacup" src='/img/teacup.png' alt='' /> </div>
+            <div> <img className="hero-plate" src='/img/plate.png' alt='' /> </div>
           </div>
           <div> <img className="hero-human" src='/img/human2.png' alt='' /></div>
           <div> <img className="hero-books" src='/img/booksShade.png' alt='' /></div>

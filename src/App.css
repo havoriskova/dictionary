@@ -12,7 +12,8 @@
   color: rgb(49, 49, 49);
 }
 
-.Container {
+
+.Container .Results, .Container footer {
     max-width: 800px;
     margin: 0 auto;
 }
@@ -39,28 +40,39 @@ inset: 0;
 }
 
 .Container .container-hero-section .hero-teaset {
-  width: 200px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  right: -3rem;
+  flex: 1 1 0;
+}
+
+.Container .container-hero-section .hero-teaset > * {
+  /* background-color: rgba(0 0 0 / .4); */
+  z-index: 2;
 }
 
 .Container .container-hero-section .hero-teapot {
 width: 160px;
+position: relative;
+top: -10vh;
+left: 10vw;
 }
 
 .Container .container-hero-section .hero-teacup {
   width: 80px;
-  position: absolute;
-  right: 40%;
-  bottom: -20px;
+  position: relative;
+  bottom: 0;
 }
 
 .Container .container-hero-section .hero-plate {
   width: 200px;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: -1rem;
 }
 
 .Container .container-hero-section .hero-human {
-  width: 320px;
+  width: 330px;
 }
 .Container .container-hero-section .hero-books {
   width: 200px;
@@ -88,7 +100,7 @@ width: 160px;
 }
 
 .App footer {
-  margin: 2rem 1rem;
+  margin: 2rem auto;
   letter-spacing: .1rem;
 }
 
@@ -136,15 +148,18 @@ filter: brightness(125%);
 @media (min-width: 1200px) {
  .Container-header {
   /*hero section together with the Dictionary form */
-    min-height: 85vh;
-    margin-left: -10rem;
+    min-height: 75vh;
+    max-width: 900px;
+    margin-left: 3%;
+    margin-top: 5%;
  }
 
  .Container .form-container {
   width: 80%;
   top: 45vh;
   position: absolute;
-  margin-left: -8.5rem;
+  margin-left: 5%;
+  z-index: 3;
  }
 
  .Container form {
@@ -155,22 +170,58 @@ filter: brightness(125%);
  }
 
  .Container .container-hero-section {
-  height: 95vh;
+  height: 85vh;
+  width: 90%;
+  margin: 0 auto;
  }
+ 
+
+
 }
 
 @media (max-width: 1200px) {
   .Container-header {
-    min-height: 75vh;
+    min-height: 60vh;
+  }
+
+  .Container .form-container {
+    max-width: 800px;
+    margin: 1rem auto;
   }
 
   .Container .container-hero-section {
     /*flex do sirky containeru*/
-    height: 85vh;
+    height: 65vh;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .Container .container-hero-section .hero-human {
+   width: 200px;
+  }
+
+  .Container .container-hero-section .hero-books {
+    width: 150px;
   }
 
   .Container .container-hero-section .hero-teaset {
-    display: none;
+    flex: 1 1 auto;
+    left: 2vw;
+
+  }
+
+  .Container .container-hero-section .hero-teapot {
+    width: 100px;
+    left: 5vw;
+    top: -5vw;
+  }
+
+  .Container .container-hero-section .hero-teacup {
+    width: 50px;
+  }
+
+  .Container .container-hero-section .hero-plate {
+    width: 120px;
   }
 }
 
@@ -179,6 +230,14 @@ filter: brightness(125%);
   .Container-header {
     font-size: 3rem;
   }
+
+}
+
+@media (max-width: 600px) {
+
+  .Container .container-hero-section .hero-teaset {
+      display: none;
+  }
 }
 
 @media (max-width: 520px) {
@@ -186,7 +245,12 @@ filter: brightness(125%);
       font-size: 2rem;
       padding-bottom: 0;
     }
+
   
+
+  .Container .container-hero-section .flex-parent-human {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 350px) {
