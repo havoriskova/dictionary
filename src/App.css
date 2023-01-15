@@ -148,7 +148,8 @@ filter: brightness(125%);
 @media (min-width: 1200px) {
  .Container-header {
   /*hero section together with the Dictionary form */
-    min-height: 75vh;
+    height: 75vh;
+    min-height: 550px; /*k doplneni vh !!!! */
     max-width: 900px;
     margin-left: 3%;
     margin-top: 5%;
@@ -171,6 +172,7 @@ filter: brightness(125%);
 
  .Container .container-hero-section {
   height: 85vh;
+  min-height: 600px; /* k doplneni vh !!!! */
   width: 90%;
   margin: 0 auto;
  }
@@ -181,7 +183,8 @@ filter: brightness(125%);
 
 @media (max-width: 1200px) {
   .Container-header {
-    min-height: 60vh;
+    height: 60vh;
+    min-height: 350px; /*k doplneni vh !!!! */
   }
 
   .Container .form-container {
@@ -192,6 +195,7 @@ filter: brightness(125%);
   .Container .container-hero-section {
     /*flex do sirky containeru*/
     height: 65vh;
+    min-height: 400px; /*k doplneni vh !!!! */
     max-width: 800px;
     margin: 0 auto;
   }
@@ -256,12 +260,14 @@ filter: brightness(125%);
   }
 
     .Container-header {
-      min-height: 50vh;
+      height: 50vh;
+      min-height: 300px; /*k doplneni vh !!!! */
     }
   
   
     .Container .container-hero-section {
       height: 55vh;
+      min-height: 350px; /*k doplneni vh !!!! */
     }
 }
 
