@@ -231,6 +231,10 @@ filter: brightness(125%);
     font-size: 3rem;
   }
 
+  .App footer {
+    margin: 2rem;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -246,11 +250,19 @@ filter: brightness(125%);
       padding-bottom: 0;
     }
 
-  
 
   .Container .container-hero-section .flex-parent-human {
     justify-content: center;
   }
+
+    .Container-header {
+      min-height: 50vh;
+    }
+  
+  
+    .Container .container-hero-section {
+      height: 55vh;
+    }
 }
 
 @media (max-width: 350px) {
