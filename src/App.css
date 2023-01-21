@@ -181,6 +181,59 @@ filter: brightness(125%);
 
 }
 
+@media (min-width: 1700px) {
+  .Container-header {
+    font-size: 6rem;
+    max-width: 1300px;
+  }
+
+  .Container form {
+    width: 90%;
+  }
+
+  .Container form h2 {
+    font-size: 3rem;
+  }
+
+  .Container .Dictionary form .flex-parent {
+    height: 5rem;
+  }
+
+  .Container .Dictionary form input, .Dictionary form button.search-button {
+    font-size: 2rem;
+  }
+
+
+  .Container form .hint {
+    font-size: 1.5rem;
+  }
+
+  .Dictionary .Results, .Container footer {
+    font-size: 1.5rem;
+  }
+
+    .Container .icon {
+      height: 3rem;
+    }
+
+    .Container .container-hero-section .hero-human {
+      width: 400px;
+    }
+
+}
+
+@media (min-width: 2000px) {
+  .Container .container-hero-section .hero-human {
+    width: 500px;
+  }
+
+  .Container .container-hero-section .hero-books {
+    width: 300px;
+  }
+
+  
+}
+
 @media (max-width: 1200px) {
   .Container-header {
     height: 60vh;
