@@ -208,7 +208,7 @@ filter: brightness(125%);
     font-size: 1.5rem;
   }
 
-  .Dictionary .Results, .Container footer {
+  .Dictionary .Results, .Container footer, .Container .error-container {
     font-size: 1.5rem;
   }
 

@@ -3,13 +3,14 @@ import axios from 'axios';
 import './Dictionary.css';
 import Results from './Results';
 import Loader from './Loader';
+import errorImg from '../img/squished-paper.png';
 
 const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
 
     const [keyword, setKeyword] = useState(defaultKeyword);
     const [isErr, setIsError] = useState(false);
     const [errorNum, setErrorNum] = useState('');
-    const [errorImg, setErrorImg] = useState('');
+    //const [errorImg, setErrorImg] = useState('');
     const [dataDictionary, setDataDictionary] = useState('');
     const [dataPictures, setDataPictures] = useState('');
     const [loaded, setLoaded] = useState(false);
@@ -59,7 +60,7 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
         setIsError(true);
         setErrorNum(res.response.request.status);
         //console.log(isErr);
-        setErrorImg(`https://http.cat/${res.response.request.status}.jpg`);
+        //setErrorImg(`https://http.cat/${res.response.request.status}.jpg`);
 
     }
 

@@ -20,7 +20,7 @@
 
 
 .error-img {
-    max-width: 100%;
+    max-width: 50%;
     margin: 1rem auto;
 }
 /* .Dictionary .Results {
@@ -178,6 +178,11 @@
     .Dictionary .phonetic-container {
         align-items: center;
         /**/
+    }
+
+    .error-img {
+        max-width: 70%;
+        margin: 1rem auto;
     }
 
 }
