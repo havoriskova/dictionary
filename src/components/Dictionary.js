@@ -29,7 +29,7 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
 
 
         // API DOCUMENTATION: https://www.pexels.com/api/documentation/
-        let apiPexelKey = process.env.PEXEL_API_KEY;
+        let apiPexelKey = process.env.REACT_APP_PEXEL_API_KEY;
         let apiUrlPexel = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
         axios.get(apiUrlPexel, {headers: {"Authorization": `${apiPexelKey}`}})
             .then(handlePexelResponse)
