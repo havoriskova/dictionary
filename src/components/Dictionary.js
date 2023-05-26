@@ -29,11 +29,28 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
 
 
         // API DOCUMENTATION: https://www.pexels.com/api/documentation/
-        let apiPexelKey = process.env.REACT_APP_PEXEL_API_KEY;
-        let apiUrlPexel = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
-        axios.get(apiUrlPexel, {headers: {"Authorization": `${apiPexelKey}`}})
-            .then(handlePexelResponse)
-            .catch(handlePexelError)
+        // let apiPexelKey = process.env.REACT_APP_PEXEL_API_KEY;
+        // let apiUrlPexel = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
+        // axios.get(apiUrlPexel, {headers: {"Authorization": `${apiPexelKey}`}})
+        //     .then(handlePexelResponse)
+        //     .catch(handlePexelError)
+        async function fetchReply() {
+            const url = 'https://voriskova-dictionary.netlify.app/.netlify/functions/fetchAPI';
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: keyword,
+            });
+
+            await response.json()
+                .then(handlePexelResponse)
+                .catch(handlePexelError)
+        }
+
+        fetchReply();
 
     }
 
