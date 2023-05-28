@@ -64,9 +64,9 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
     const handleDictionaryResponse = (res) => {
         setIsError(false);
         //console.log(res);
-        console.log(res); // axios always puts response into 'data' -> s axiosem res.data
+        console.log(res.data); // axios always puts response into 'data'
         //console.log(res.data[0].meanings[0].definitions[0].definition);
-        setDataDictionary(res[0]); // s axiosem res.data[0]
+        setDataDictionary(res.data[0]);
 
     }
 
