@@ -45,12 +45,13 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
                 body: keyword,
             });
 
-            await response.json()
-                .then(handlePexelResponse)
-                .catch(handlePexelError)
+                
         }
 
-        fetchReply();
+        fetchReply()
+            .then(data.json)
+            .then(handlePexelResponse)
+            .catch(handlePexelError);
 
     }
 
