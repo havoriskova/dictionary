@@ -6,23 +6,16 @@ const handler = async (event) => {
     const url = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
 
 
-    const response = await fetch(url, {
-      method: 'GET',
+    let reply = axios.get(url, {
       headers: {
           'Content-Type': 'application/json',
           "Authorization": `${process.env.REACT_APP_PEXEL_API_KEY}`
       },
   
-  });
+    });
 
-  
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        reply: response.data
-      })
+    return reply;
       
-    }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
   }

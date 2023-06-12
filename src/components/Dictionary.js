@@ -34,23 +34,10 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
         // axios.get(apiUrlPexel, {headers: {"Authorization": `${apiPexelKey}`}})
         //     .then(handlePexelResponse)
         //     .catch(handlePexelError)
-        async function fetchReply() {
-            const url = 'https://voriskova-dictionary.netlify.app/.netlify/functions/fetchAPI';
+        
+        let apiUrlPictures= 'https://voriskova-dictionary.netlify.app/.netlify/functions/fetchAPI';
 
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain',
-                },
-                body: keyword,
-            });
-
-            return response;
-
-                
-        }
-
-        fetchReply()
+         axios.post(apiUrlPictures, keyword)
             .then((data) => data.json)
             .then(handlePexelResponse)
             .catch(handlePexelError);
