@@ -10,7 +10,7 @@
 
 //---------------------------------------------------------------------
 
-// import axios from 'axios';
+//import axios from 'axios';
 
 // const handler = async (event) => {
 //     const keyword = event.body || 'yoga';
@@ -30,14 +30,17 @@ export const handler = async (event) => {
   const keyword = event.body || 'yoga';
   const url = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
 
-  axios.get(url,{
+  const response = await fetch(url,{
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
       "Authorization": `${process.env.REACT_APP_PEXEL_API_KEY}`
-    }}
-  ).then(data)
-  .catch(error);
+    },
+    method: 'GET'},
+    
+  )
+
+  const data = await response.json();
 
   
 
