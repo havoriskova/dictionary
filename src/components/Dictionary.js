@@ -36,8 +36,7 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
         //     .catch(handlePexelError)
         
         let apiUrlPictures= 'https://voriskova-dictionary.netlify.app/.netlify/functions/fetchAPI';
-
-         axios.post(apiUrlPictures, keyword)
+        axios.post(apiUrlPictures, keyword)
             .then((data) => data.json)
             .then(handlePexelResponse)
             .catch(handlePexelError);

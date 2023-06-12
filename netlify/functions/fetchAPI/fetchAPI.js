@@ -30,12 +30,24 @@ export const handler = async (event) => {
   const keyword = event.body || 'yoga';
   const url = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
 
+  axios.get(url,{
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+      "Authorization": `${process.env.REACT_APP_PEXEL_API_KEY}`
+    }}
+  ).then(data)
+  .catch(error);
+
+  
+
 	return {
 		statusCode: 200,
 		body: JSON.stringify({
 			message: 'This is what will be returned!',
       zkouska: keyword,
-      url: url 
+      url: url,
+      data: data
 		})
 	}
 }
