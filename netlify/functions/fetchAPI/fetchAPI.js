@@ -31,30 +31,31 @@ export const handler = async (event) => {
   const keyword = event.body || 'yoga';
   const url = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
 
-  const response = await fetch(url,{
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json',
-      "Authorization": `${process.env.REACT_APP_PEXEL_API_KEY}`
-    },
-    method: 'GET',
-    referrerPolicy: "no-referrer",
-    body: JSON.stringify(data)}
-  )
-
-  const data = await response.json();
-
+  try {
+      const response = await fetch(url,{
+        headers: {
+          'Content-Type': 'application/json',
+          "Authorization": `${process.env.REACT_APP_PEXEL_API_KEY}`
+        },
+        method: 'GET'}
+      )
   
+  
+    
+      return {
+        statusCode: 200,
+        body: JSON.stringify({
+          message: 'This is what will be returned!',
+          zkouska: keyword,
+          url: url,
+          data: response.data
+        })
+      }
 
-	return {
-		statusCode: 200,
-		body: JSON.stringify({
-			message: 'This is what will be returned!',
-      zkouska: keyword,
-      url: url,
-      data: data
-		})
-	}
+  } catch (error) {
+      return {statusCode: 500, body:error.toString()}
+  }
+  
 }
 
   // let apiUrlPexel = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
