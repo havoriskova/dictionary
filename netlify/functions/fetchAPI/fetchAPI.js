@@ -37,8 +37,9 @@ export const handler = async (event) => {
       'Content-Type': 'application/json',
       "Authorization": `${process.env.REACT_APP_PEXEL_API_KEY}`
     },
-    method: 'GET'},
-    
+    method: 'GET',
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify(data)}
   )
 
   const data = await response.json();
