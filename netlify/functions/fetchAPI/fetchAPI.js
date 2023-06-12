@@ -11,6 +11,7 @@
 //---------------------------------------------------------------------
 
 //import axios from 'axios';
+import fetch from 'node-fetch';
 
 // const handler = async (event) => {
 //     const keyword = event.body || 'yoga';
