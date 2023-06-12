@@ -1,4 +1,5 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
+import axios from 'axios';
 
 const handler = async (event) => {
   try {
