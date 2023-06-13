@@ -74,6 +74,7 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
 
     const handlePexelResponse = (res) => {
         //console.log(res.data.photos[0].src.landscape);
+        console.log(res);
         setDataPictures(res.data.photos); //tj., bude to array
 
         let srcOfImages = res.data.photos.map(item => item.src.medium);
