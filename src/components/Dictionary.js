@@ -39,8 +39,7 @@ const Dictionary = ({ defaultKeyword, getSrcOfImages, getIndexOfImage }) => {
         axios.post(apiUrlPictures, {
             keyword: keyword
           })
-            .then((data) => {console.log(data); console.log(data.data); console.log(data.data.data.photos);})
-            .then(handlePexelResponse)
+            .then((data) => {console.log(data); console.log(data.data); console.log(data.data.data.photos); handlePexelResponse(data.data)})
             .catch(handlePexelError);
 
     }
