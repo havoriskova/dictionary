@@ -1,6 +1,6 @@
 // for a full working demo of Netlify Identity + Functions, see https://netlify-gotrue-in-react.netlify.com/
 
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 
 const handler = async function (event, context) {
   if (!context.clientContext && !context.clientContext.identity) {
