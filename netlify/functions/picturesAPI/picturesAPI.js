@@ -13,8 +13,13 @@ const handler = async function (event, context) {
     }
   }
   const { identity, user } = context.clientContext
+  const keyword = event.body || 'yoga';
+  const url = `https://api.pexels.com/v1/search?query=${keyword}&orientation=landscape&per_page=6`;
   try {
-    const response = await fetch('https://api.chucknorris.io/jokes/random')
+    const response = await fetch(url, { headers: {
+      'Content-Type': 'application/json',
+      "Authorization": `${process.env.REACT_APP_PEXEL_API_KEY}`
+    }})
     if (!response.ok) {
       // NOT res.status >= 200 && res.status < 300
       return { statusCode: response.status, body: response.statusText }
