@@ -148,7 +148,7 @@
 .Dictionary .Gallery .picture {
     height: 100%; /*because I receive landscape img, I can set the height on 100% to fill the parent div*/
     position: relative; /* -||- */
-    left: -25%; /* -||- */
+    /* left: -25%; -||- */
     transition: transform .5s ease, filter .5s ease;
     cursor: pointer;
     filter: grayscale(50%);
